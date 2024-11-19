@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <h1>Weather Dashboard</h1>
+    
+    <!-- Search form for city -->
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="getWeather()">Get Weather</button>
+    <button onclick="getWeeklyWeather()">Weekly Weather</button>
+    
+    <!-- Sections to display current and daily weather data -->
+    <div id="weatherData">
+        <h2>Current Weather</h2>
+        <p id="currentTemperature"></p>
+        <p id="cloudCover"></p>
+    </div>
+    
+    <div id="dailyData">
+        <h2>Daily Forecast</h2>
+        <p id="day"></p>
+        <p id="dailyMaxTemp"></p>
+        <p id="dailyMinTemp"></p>
+    </div>
+
+    <!-- Section to display weekly forecast -->
+    <div id="weeklyData">
+        <h2>Weekly Forecast</h2>
+        <div id="weeklyForecast"></div>
+    </div>
+
+    <!-- JavaScript to handle weather data fetching and display -->
+    <script src="./app.js">
+       
+    </script>
+
+</body>
+</html>
