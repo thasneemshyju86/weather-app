@@ -6,7 +6,7 @@ This is a simple weather dashboard that fetches current weather and forecast dat
 
 1. Clone the repository:
     ```
-    git clone https://github.com/your-username/weather-app.git
+    git clone https://github.com/thasneemshyju86/weather-app.git
     ```
 
 2. Navigate to the project directory:
