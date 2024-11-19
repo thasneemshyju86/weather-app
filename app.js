@@ -20,16 +20,14 @@
 
 // Fetches current weather and daily forecast 
 async function getWeather() {
-    // const weeklyForecast = document.getElementById("weeklyForecast");
-    // weeklyForecast.innerHTML = ""; // Clear previous data
-    document.getElementById('weeklyData').style.display='none'
+    document.getElementById('weeklyData').style.display='none'  //hide the weekly forecast container
     const city = document.getElementById("cityInput").value;
     if (!city) {
         alert("Please enter a city name");
         return;
     }
 
-    // Step 1: Get coordinates for the entered city
+    // Get coordinates for the entered city
     const coords = await getCoordinates(city);
     if (!coords) {
         alert("City not found");
@@ -56,8 +54,8 @@ async function getWeather() {
 // Displays the current weather data
 function displayCurrentWeather(data) {
     const currentTemp = data.current_weather.temperature;
-    console.log(data)
-document.getElementById('weatherData').style.display='block'
+    // console.log(data)
+    document.getElementById('weatherData').style.display='block'
     document.getElementById("currentTemperature").textContent = `Temperature: ${currentTemp}°C`;
 }
 
@@ -75,7 +73,8 @@ function formatDate(dateString){
 // Displays the daily weather forecast
 function displayDailyWeather(data) {
     const daily = data.daily;
-    const formattedDate=formatDate(daily.time[0])
+    // console.log(daily)
+    const formattedDate=formatDate(daily.time)
 
     document.getElementById('dailyData').style.display='block'
     document.getElementById("day").textContent = ` ${formattedDate}`;
@@ -113,9 +112,8 @@ async function getWeeklyWeather() {
 function displayWeeklyWeather(data) {
     const weeklyForecastContainer = document.getElementById("weeklyForecast");
     weeklyForecastContainer.innerHTML = ""; // Clear previous data
-document.getElementById('weeklyData').style.display='block'
-console.log(data)
-// const dates=formatDate(data.daily.time)
+    document.getElementById('weeklyData').style.display='block'
+
     // Loop through each day's forecast and display
     data.daily.time.forEach((date, index) => {
         const maxTemp = data.daily.temperature_2m_max[index];
