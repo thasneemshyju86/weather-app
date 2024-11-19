@@ -73,8 +73,9 @@ function formatDate(dateString){
 // Displays the daily weather forecast
 function displayDailyWeather(data) {
     const daily = data.daily;
-    // console.log(daily)
-    const formattedDate=formatDate(daily.time)
+    console.log(daily)
+    const formattedDate=formatDate(daily.time[0])
+    console.log(daily.time[0])
 
     document.getElementById('dailyData').style.display='block'
     document.getElementById("day").textContent = ` ${formattedDate}`;
